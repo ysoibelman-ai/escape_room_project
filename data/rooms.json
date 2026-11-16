@@ -1,0 +1,42 @@
+[
+  {
+    "room_id": "1",
+    "name": "The Lab",
+    "difficulty": "Easy",
+    "duration": 60,
+    "min_players": 2,
+    "max_players": 8,
+    "price_per_player": 80,
+    "is_active": true
+  },
+  {
+    "room_id": "R002",
+    "name": "Dark Castle",
+    "difficulty": "Hard",
+    "duration": 75,
+    "min_players": 3,
+    "max_players": 6,
+    "price_per_player": 120,
+    "is_active": true
+  },
+  {
+    "room_id": "R003",
+    "name": "Lost Temple",
+    "difficulty": "Medium",
+    "duration": 60,
+    "min_players": 2,
+    "max_players": 10,
+    "price_per_player": 90,
+    "is_active": true
+  },
+  {
+    "room_id": "R004",
+    "name": "The Bunker",
+    "difficulty": "Hard",
+    "duration": 90,
+    "min_players": 4,
+    "max_players": 8,
+    "price_per_player": 110,
+    "is_active": false
+  }
+]

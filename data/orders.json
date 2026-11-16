@@ -1,0 +1,101 @@
+[
+    {
+        "booking_id": "B001",
+        "customer_name": "David Cohen",
+        "room_id": "R001",
+        "booking_date": "2026-11-14",
+        "start_time": "10:00:00",
+        "players": 4,
+        "total_price": 320.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B002",
+        "customer_name": "Sarah Levi",
+        "room_id": "R001",
+        "booking_date": "2030-12-12",
+        "start_time": "16:12:00",
+        "players": 6,
+        "total_price": 621.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B003",
+        "customer_name": "Moshe Israel",
+        "room_id": "R002",
+        "booking_date": "2026-11-14",
+        "start_time": "10:00:00",
+        "players": 5,
+        "total_price": 675.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B004",
+        "customer_name": "Rachel Mizrahi",
+        "room_id": "R003",
+        "booking_date": "2026-11-15",
+        "start_time": "14:00:00",
+        "players": 8,
+        "total_price": 612.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B005",
+        "customer_name": "Daniel Peretz",
+        "room_id": "R002",
+        "booking_date": "2026-11-16",
+        "start_time": "16:00:00",
+        "players": 3,
+        "total_price": 360.0,
+        "status": "Cancelled",
+        "cancellation_fee": 90.0
+    },
+    {
+        "booking_id": "B006",
+        "customer_name": "Noa Levi",
+        "room_id": "R001",
+        "booking_date": "2026-11-17",
+        "start_time": "18:00:00",
+        "players": 5,
+        "total_price": 360.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "B007",
+        "customer_name": "David Cohen",
+        "room_id": "R003",
+        "booking_date": "2026-11-17",
+        "start_time": "18:00:00",
+        "players": 10,
+        "total_price": 765.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "1",
+        "customer_name": "yaakov",
+        "room_id": "R003",
+        "booking_date": "2026-11-17",
+        "start_time": "21:30:00",
+        "players": 9,
+        "total_price": 7000,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "12",
+        "customer_name": "yaakovkvokvok",
+        "room_id": "1",
+        "booking_date": "2030-12-12",
+        "start_time": "11:07:00",
+        "players": 5,
+        "total_price": 23,
+        "status": "Active",
+        "cancellation_fee": 0.0
+    }
+]
