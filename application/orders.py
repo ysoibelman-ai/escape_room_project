@@ -74,7 +74,7 @@ def update_order(orders:list,rooms):
                     print ("Clash with other Orders!!!!")
                     continue
                 break
-            
+
             my_date_time = get_date_time()
             value = str(my_date_time.time())
         
@@ -173,9 +173,6 @@ def get_new_order_info(orders,rooms):
             print (f"people must be between {room["min_players"]} and {room["max_players"]}")
             continue
         break
-
-
-
 
     while True:
     # Get Booking Date and Hour
@@ -276,7 +273,7 @@ def check_clash(my_date_time:datetime,room,orders,my_order_id):
             continue
         if order["room_id"] == room["room_id"]:
             if order["booking_date"] == str(my_date_time.date()):
-                print ("SAME DATE DUDE")
+                # print ("SAME DATE DUDE")
 
                 # Second DT Object
                 new_order_datetime = turn_into_date_time(order["booking_date"],order["start_time"])

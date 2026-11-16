@@ -23,7 +23,7 @@ def main():
                 order_manager(rooms,orders)
                 os.system("clear")
             case 3:
-                report_manager()
+                report_manager(orders,rooms)
                 os.system("clear")
             case 4:
                 exit()

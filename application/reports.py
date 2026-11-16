@@ -32,11 +32,11 @@ def show_orders(orders:list,is_active = True):
         print([filter(lambda order: order["is_active"] == "Cancelled",orders)])
 
 def total_active_orders_income(orders:list):
-    print(f"Total Income From All Active Orders Is {sum(order["total_price"] for order in orders if order["is_active"] == "Active")}")
+    print(f"Total Income From All Active Orders Is {sum(order["total_price"] for order in orders if order["status"] == "Active")}")
 
 
 def total_cancellation_fee(orders:list):
-    print (f"Total Cancellation fee is: {sum(order["cancellation_fee"] for order in orders if order["is_active"] == "Cancelled" )}")
+    print (f"Total Cancellation fee is: {sum(order["cancellation_fee"] for order in orders if order["status"] == "Cancelled" )}")
 
 
 def orders_per_room(orders:list):
@@ -80,9 +80,3 @@ def percentage_room_usage(orders:list,rooms:list):
     total_time = total_time*100 / (12*60)
     total_time = f"{total_time}% daily use"
     return total_time
-        
-
-
-
-
-

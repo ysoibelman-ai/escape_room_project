@@ -97,5 +97,16 @@
         "total_price": 23,
         "status": "Active",
         "cancellation_fee": 0.0
+    },
+    {
+        "booking_id": "098",
+        "customer_name": "shapiro",
+        "room_id": "1",
+        "booking_date": "2029-12-12",
+        "start_time": "12:12:00",
+        "players": 6,
+        "total_price": 432.0,
+        "status": "Active",
+        "cancellation_fee": 0.0
     }
 ]
