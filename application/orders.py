@@ -57,16 +57,24 @@ def update_order(orders:list,rooms):
                 if not check_too_late(my_date_time,order_room,orders):
                     print ("not enough time")
                     continue
+                if not check_clash(my_date_time,order_room,orders,order["booking_id"]):
+                    print ("Clash with other Orders!!!!")
+                    continue
                 break
+                
             value = str(my_date_time.date())
                 
         elif change == "start_time":
             while True:
                 my_date_time = get_date_time(order["booking_date"])
-                if not check_too_late(my_date_time,room,orders):
+                if not check_too_late(my_date_time,order_room,orders):
                     print ("not enough time")
                     continue
+                if not check_clash(my_date_time,order_room,orders,order["booking_id"]):
+                    print ("Clash with other Orders!!!!")
+                    continue
                 break
+            
             my_date_time = get_date_time()
             value = str(my_date_time.time())
         
@@ -185,7 +193,7 @@ def get_new_order_info(orders,rooms):
             print ("Too late in the day, not enough time to play room")
             continue
 
-        if not check_clash(my_date_time,room,orders):
+        if not check_clash(my_date_time,room,orders,booking_id):
             print ("Clash with other Orders!!!!")
             continue
         break
@@ -261,9 +269,11 @@ def check_too_late(my_date_time:datetime,room):
     return True
 
     
-def check_clash(my_date_time:datetime,room,orders): 
+def check_clash(my_date_time:datetime,room,orders,my_order_id): 
     have_enough_time = True
     for order in orders:
+        if order["booking_id"] == my_order_id:
+            continue
         if order["room_id"] == room["room_id"]:
             if order["booking_date"] == str(my_date_time.date()):
                 print ("SAME DATE DUDE")
