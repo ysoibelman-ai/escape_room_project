@@ -1,7 +1,7 @@
 from application.menus import report_menu
 from application.helper_functions import get_str, get_num,check_id_exists
 from application.rooms import get_room
-def report_manager(orders:list,rooms:list):
+def report_manager(rooms:list,orders:list):
     while True:
         report_menu()
         menu_selection = get_num()
@@ -17,7 +17,7 @@ def report_manager(orders:list,rooms:list):
             case 5:
                 print(most_popular_room(orders))
             case 6:
-                print(orders_per_room(orders,rooms))
+                print(orders_per_room(orders))
             case 7:
                 print (percentage_room_usage(orders,rooms))
             case 8:
@@ -27,9 +27,9 @@ def report_manager(orders:list,rooms:list):
 
 def show_orders(orders:list,is_active = True):
     if is_active:
-        print([filter(lambda order: order["is_active"] == "Active",orders)])
+        print(list(filter(lambda order: order["status"] == "Active",orders)))
     else:
-        print([filter(lambda order: order["is_active"] == "Cancelled",orders)])
+        print(list(filter(lambda order: order["status"] == "Cancelled",orders)))
 
 def total_active_orders_income(orders:list):
     print(f"Total Income From All Active Orders Is {sum(order["total_price"] for order in orders if order["status"] == "Active")}")
@@ -42,16 +42,17 @@ def total_cancellation_fee(orders:list):
 def orders_per_room(orders:list):
     orders_per_room_dict = {}
     for order in orders:
-        if order["room_id"] not in orders_per_room:
-            orders_per_room_dict["room_id"] = 1
+        if order["room_id"] not in orders_per_room_dict:
+            orders_per_room_dict[order["room_id"]] = 1
         else:
-            orders_per_room_dict["room_id"]+=1
+            orders_per_room_dict[order["room_id"]]+=1
     return orders_per_room_dict
 
 def most_popular_room(orders:list):
     orders_per_room_dict = orders_per_room(orders)
     max_orders = 0
-    for key,value in orders_per_room_dict.item():
+    
+    for key,value in orders_per_room_dict.items():
         if value > max_orders:
             max_orders = value
             max_room = key

@@ -4,6 +4,17 @@ from application.data_manager import update_json
 
 def room_manager(rooms:list,orders:list):
     while True:
+        if rooms == None:
+            choice = input("""
+============
+  NO ROOMS
+============
+Enter 1 to add room, any other key to return to main menu: """)
+            
+            if choice == "1":
+                add_room(rooms)
+            else:
+                return
         rooms_menu()
         menu_selection = get_num()
         match menu_selection:
@@ -77,7 +88,7 @@ def update_room_details(rooms):
             changing = False
 
 def get_new_room_info():
-    room_id = ("Enter room id: ")
+    room_id = get_str("Enter room id: ")
     name = get_str("Enter room name: ")
     difficulty = get_difficutly("Enter difficulty: ")
     duration = get_num("Enter duration: ")

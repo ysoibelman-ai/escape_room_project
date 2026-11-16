@@ -11,20 +11,19 @@ def main():
     rooms_file = Path(__file__).parent / "data"/"rooms.json"
     orders_file = Path(__file__).parent / "data"/"orders.json"
     while True:
-        rooms = load_from_json(rooms_file)
-        orders = load_from_json(orders_file)
+        rooms = load_from_json(rooms_file,"rooms")
+        orders = load_from_json(orders_file,"orders")
+        
+        
         main_menu()
         main_menu_selection = get_num()
         match main_menu_selection:
             case 1:
                 room_manager(rooms,orders)
-                os.system("clear")
             case 2:
                 order_manager(rooms,orders)
-                os.system("clear")
             case 3:
-                report_manager(orders,rooms)
-                os.system("clear")
+                report_manager(rooms,orders)
             case 4:
                 exit()
             case _:

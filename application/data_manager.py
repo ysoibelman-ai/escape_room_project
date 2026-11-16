@@ -1,12 +1,12 @@
 import json
 from pathlib import Path
-def load_from_json(my_file):
+def load_from_json(my_file,type):
     try:
         with open (my_file,"r") as file:
             content = json.load(file)
             return content
     except:
-        print ("unable to load json file")
+        print (f"unable to load {type} json file")
     
 def update_json(content,which_file):
     rooms_file = Path(__file__).parent.parent / "data"/"rooms.json"

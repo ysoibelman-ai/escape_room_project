@@ -54,4 +54,3 @@ def check_id_exists(new_id,id_type,my_list):
         if item[id_type] == new_id:
             return True
     return False
-

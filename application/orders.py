@@ -6,6 +6,20 @@ from application.rooms import is_active,get_room,right_amount_of_people
 
 
 def order_manager(rooms:list,orders:list):
+    if orders == None and rooms ==None:
+        print ("No Rooms. Must Add rooms before managing orders")
+        return
+    elif orders == None:
+        choice = input("""
+    =============
+      NO ORDERS
+    =============
+    Enter 1 to create new order, any other key to return to main menu: """)
+                
+        if choice == "1":
+            create_order(rooms)
+        else:
+            return
     while True:
         order_menu()
         menu_selection = get_num()
@@ -61,8 +75,15 @@ def update_order(orders:list,rooms):
                     print ("Clash with other Orders!!!!")
                     continue
                 break
-                
+            
+            # if my_date_time.weekday() == 4 or my_date_time.weekday() ==5:
+            #         order["total_price"] = calculate_discount(order["total_price"],order["players"],True)
+            # else:
+            #         order["total_price"] = calculate_discount(order["total_price"],order["players"])
+
+
             value = str(my_date_time.date())
+             
                 
         elif change == "start_time":
             while True:
@@ -84,6 +105,14 @@ def update_order(orders:list,rooms):
                 if not right_amount_of_people(order_room,value):
                     print ("room cannot hold that aount of peole")
                     continue
+                break
+            # my_date_time = turn_into_date_time(order["booking_date"],order["start_time"])
+            # if my_date_time.weekday() == 4 or my_date_time.weekday() ==5:
+            #     order["total_price"] = calculate_discount(order["total_price"],value,True)
+            # else:
+            #     order["total_price"] = calculate_discount(order["total_price"],value)
+                        
+            
 
         order[change] = value
         continue_changing = get_num("Enter 1 to stop changing, any other number to continue changing")

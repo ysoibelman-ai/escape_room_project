@@ -49,8 +49,8 @@
         "room_id": "R002",
         "booking_date": "2026-11-16",
         "start_time": "16:00:00",
-        "players": 3,
-        "total_price": 360.0,
+        "players": 5,
+        "total_price": 291.6,
         "status": "Cancelled",
         "cancellation_fee": 90.0
     },
